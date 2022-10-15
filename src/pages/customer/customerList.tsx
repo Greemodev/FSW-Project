@@ -2,7 +2,7 @@ import { IonButtons,IonButton, IonCard, IonCol, IonContent, IonGrid, IonHeader, 
 import { add, pencil, close } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { saveCustomer, searchCustomers } from './customerApi';
+import { saveCustomer, searchCustomers, removeCustomer } from './customerApi';
 
 const CustomerList: React.FC = () => {
 
@@ -17,6 +17,11 @@ const CustomerList: React.FC = () => {
   const search = () => {
     let result = searchCustomers();
     setClientes(result);
+  }
+
+  const remove = (id: string) => {
+    removeCustomer(id);
+    search();
   }
 
   const testLocalStorage = () => {
@@ -84,7 +89,7 @@ const CustomerList: React.FC = () => {
       <IonCol>{cliente.phone}</IonCol>
       <IonCol>{cliente.adress}</IonCol>
       <IonCol><IonButton color="primary" size="default"><IonIcon icon={pencil}/></IonButton>
-      <IonButton color="danger" size="default"><IonIcon icon={close}/>
+      <IonButton onClick={() => remove(cliente.id)} color="danger" size="default"><IonIcon icon={close}/>
       </IonButton></IonCol>
       </IonRow>
         )}
