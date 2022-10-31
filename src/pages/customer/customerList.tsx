@@ -2,12 +2,13 @@ import { IonButtons,IonButton, IonCard, IonCol, IonContent, IonGrid, IonHeader, 
 import { add, pencil, close } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
+import Customer from './Customer';
 import { saveCustomer, searchCustomers, removeCustomer } from './customerApi';
 
 const CustomerList: React.FC = () => {
     
   const { name } = useParams<{ name: string; }>();
-  const [clientes, setClientes] = useState([]);
+  const [clientes, setClientes] = useState<Customer[]>([]);
   const history = useHistory();
 
 
@@ -29,6 +30,7 @@ const CustomerList: React.FC = () => {
 
   const testLocalStorage = () => {
     const example = {
+      id: "1",
       firstname: "Jim",
       lastname:"Re",
       email:"jirem@gmail.com",
@@ -89,7 +91,7 @@ const CustomerList: React.FC = () => {
         <IonCol>Actions</IonCol>
       </IonRow>
 
-      {clientes.map((cliente: any) =>
+      {clientes.map((cliente: Customer) =>
       <IonRow>
       <IonCol></IonCol>
       <IonCol>{cliente.firstname}{cliente.lastname}</IonCol>
