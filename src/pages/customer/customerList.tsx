@@ -42,7 +42,7 @@ const CustomerList: React.FC = () => {
   }
 
   const addCustomer = () => {
-    history.push("/page/customer/new");
+    history.push("/page/Customers/new");
   }
 
 
@@ -72,7 +72,7 @@ const CustomerList: React.FC = () => {
 
         <IonContent>
           <IonCard>
-            <IonTitle>Customers Management</IonTitle>
+            <IonTitle>Customers Management </IonTitle>
 
             <IonItem>
               <IonButton onClick={addCustomer} color="primary" slot="end" size="default">
