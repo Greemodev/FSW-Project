@@ -24,6 +24,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import CustomerList from './pages/customer/customerList';
 import CustomerEdit from './pages/customer/customerEdit';
+import EmployeeList from './pages/employee/emplyeeList';
+import EmployeeEdit from './pages/employee/employeeEdit';
 
 setupIonicReact();
 
@@ -43,6 +45,15 @@ const App: React.FC = () => {
             <Route path="/page/customers/:id" exact={true}>
                <CustomerEdit/>
             </Route>
+
+
+            <Route path="/page/employees" exact={true}>
+               <EmployeeList/>
+            </Route>
+            <Route path="/page/employees/:id" exact={true}>
+               <EmployeeEdit/>
+            </Route>
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

@@ -29,14 +29,14 @@ const appPages: AppPage[] = [
     mdIcon: mailSharp
   },
   {
-    title: 'Providers',
-    url: '/page/Providers',
+    title: 'Employees',
+    url: '/page/Employees',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
   {
-    title: 'Employees',
-    url: '/page/Emplyees',
+    title: 'Vendors',
+    url: '/page/Vendors',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
